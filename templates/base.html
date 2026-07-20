@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ data.name }} | {{ data.title }}{% endblock %}</title>
+    <meta name="description" content="{{ data.tagline }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" id="site-header">
+        <nav class="navbar" aria-label="Primary navigation">
+            <a href="#hero" class="navbar__brand">{{ data.name }}</a>
+
+            <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="navbar__menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                {% if data.certifications %}<li><a href="#certifications" class="nav-link">Certifications</a></li>{% endif %}
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__inner">
+            <p>&copy; {{ data.name }}. Built with Python &amp; Flask.</p>
+            <div class="footer__links">
+                <a href="mailto:{{ data.email }}">Email</a>
+                <a href="{{ data.linkedin_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                {% if data.github_url %}<a href="{{ data.github_url }}" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
