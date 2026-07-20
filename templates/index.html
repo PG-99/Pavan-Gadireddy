@@ -6,14 +6,27 @@
 <section id="hero" class="hero">
     <div class="hero__network" aria-hidden="true"></div>
     <div class="container hero__inner">
-        <p class="hero__eyebrow">Data Engineering &middot; ETL &middot; Cloud Migration</p>
-        <h1 class="hero__name">{{ data.name }}</h1>
-        <h2 class="hero__title">{{ data.title }}</h2>
-        <p class="hero__tagline">{{ data.tagline }}</p>
-        <div class="hero__actions">
-            <a href="#projects" class="btn btn--primary">View Projects</a>
-            <a href="{{ url_for('download_resume') }}" class="btn btn--secondary">Download Resume</a>
-            <a href="#contact" class="btn btn--ghost">Contact</a>
+        <div class="hero__grid">
+            <div class="hero__text">
+                <p class="hero__eyebrow">Data Engineering &middot; ETL &middot; Cloud Migration</p>
+                <h1 class="hero__name">{{ data.name }}</h1>
+                <h2 class="hero__title">{{ data.title }}</h2>
+                <p class="hero__tagline">{{ data.tagline }}</p>
+                <div class="hero__actions">
+                    <a href="#projects" class="btn btn--primary">View Projects</a>
+                    <a href="{{ url_for('download_resume') }}" class="btn btn--secondary">Download Resume</a>
+                    <a href="#contact" class="btn btn--ghost">Contact</a>
+                </div>
+            </div>
+            <div class="hero__photo">
+                <img
+                    src="{{ url_for('static', filename='images/pavan-profile.jpg') }}"
+                    alt="Pavan Gadireddy, Data Engineer and ETL Developer"
+                    class="hero__photo-img"
+                    width="240"
+                    height="240"
+                >
+            </div>
         </div>
     </div>
 </section>
@@ -173,17 +186,10 @@
                 <span class="contact-card__label">LinkedIn</span>
                 <span class="contact-card__value">linkedin.com/in/pavan-gadireddy</span>
             </a>
-            {% if data.github_url %}
             <a class="contact-card" href="{{ data.github_url }}" target="_blank" rel="noopener noreferrer">
                 <span class="contact-card__label">GitHub</span>
-                <span class="contact-card__value">{{ data.github_url }}</span>
+                <span class="contact-card__value">github.com/PG-99</span>
             </a>
-            {% else %}
-            <div class="contact-card contact-card--placeholder">
-                <span class="contact-card__label">GitHub</span>
-                <span class="contact-card__value">Add your GitHub profile link in app.py</span>
-            </div>
-            {% endif %}
             <div class="contact-card contact-card--static">
                 <span class="contact-card__label">Location</span>
                 <span class="contact-card__value">{{ data.location }}</span>

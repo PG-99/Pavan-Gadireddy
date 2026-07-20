@@ -27,9 +27,7 @@ PORTFOLIO = {
     "location": "Florida, USA",
     "email": "pavangadireddy1999@gmail.com",
     "linkedin_url": "https://www.linkedin.com/in/pavan-gadireddy/",
-    # No GitHub profile URL was listed on the resume — replace this
-    # placeholder with the real profile link when available.
-    "github_url": "",
+    "github_url": "https://github.com/PG-99",
     "about": (
         "Ab Initio Data Engineer with hands-on experience designing, "
         "developing, and optimizing enterprise-scale ETL workflows for "
@@ -311,7 +309,7 @@ PORTFOLIO = {
             "status": "Completed",
         },
         {
-            "name": "Microsoft Certified: Azure Databricks Data Engineer Associate",
+            "name": "Microsoft Certified: Azure Databricks Data Engineer Associate - DP750",
             "issuer": "Microsoft",
             "url": "",
             "status": "In Progress",
